@@ -1,4 +1,12 @@
 import type { Metadata } from "next";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import NavItems from "@/components/NavItems";
@@ -20,11 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+     <ClerkProvider>
+      <html lang="en">
       <body className={`${bricolage.variable} antialiased`}>
         <Navbar />
         {children}
         </body>
     </html>
+     </ClerkProvider>
+    
   );
 }
