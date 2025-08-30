@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
@@ -52,7 +51,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   )
 }
 
-function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
+function TableRow({ className, children, ...props }: React.ComponentProps<"tr">) {
   return (
     <tr
       data-slot="table-row"
@@ -61,7 +60,15 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
         className
       )}
       {...props}
-    />
+    >
+      {/*
+        Remove whitespace-only text nodes.
+        This prevents hydration errors when <tr> has spaces/newlines.
+      */}
+      {React.Children.toArray(children).filter(
+        (child) => !(typeof child === "string" && child.trim() === "")
+      )}
+    </tr>
   )
 }
 

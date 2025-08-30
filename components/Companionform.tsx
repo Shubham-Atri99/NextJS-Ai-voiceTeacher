@@ -22,7 +22,7 @@ const CompanionForm = () => {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     const newCompanion = await createCompanion(data);
     if (newCompanion) {
-      redirect(`/companions/${newCompanion.$id}`); 
+      redirect(`/companions/${newCompanion.id}`);
     }else{
       redirect(`/`)
     }
