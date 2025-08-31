@@ -10,7 +10,7 @@ const subjectColors: Record<string, string> = {
   Science: "#A7F3D0",   
   History: "#BFDBFE",    
   English: "#FBCFE8",    
-  Geography: "#DDD6FE",  
+  coding: "#DDD6FE",  
   default: "#E5E7EB"     
 };
 

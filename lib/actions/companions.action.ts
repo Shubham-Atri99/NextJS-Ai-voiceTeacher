@@ -64,3 +64,41 @@ export const addToSessionHistory = async (companionId: string) => {
 
     return data;
 }
+export const getrecentSessions=async(limit=10)=>{
+  const supabase=createSupabaseClient();
+  const {data,error}=await supabase
+  .from("session_history")
+  .select(`companions:companion_id(*)`)
+  .order("created_at",{ascending:false})
+  .limit(limit);
+
+  if(error){
+    throw new Error(error.message||"Failed to fetch recent sessions")
+  }
+  return data.map(({companions})=>companions)
+}
+export const getUserSessions=async(userId:string,limit=10)=>{
+  const supabase=createSupabaseClient();
+  const {data,error}=await supabase
+  .from("session_history")
+  .select(`companions:companion_id(*)`)
+  .eq("user_id",userId)
+  .order("created_at",{ascending:false})
+  .limit(limit);
+  if(error){
+    throw new Error(error.message||"Failed to fetch recent sessions")
+  }
+  return data.map(({companions})=>companions)
+}
+
+export const getuserCompanions=async(userId:String)=>{
+const supabase=createSupabaseClient();
+const {data,error}=await supabase
+.from("companions")
+.select()
+.eq("author",userId)
+if(error){
+  throw new Error(error.message||"Failed to fetch user companions") 
+}
+return data;
+}

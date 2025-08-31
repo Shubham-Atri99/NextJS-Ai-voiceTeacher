@@ -28,7 +28,7 @@ export const configureAssistant = (voice: string, style: string) => {
     },
     voice: {
       provider: "11labs",
-      voiceId: voiceId,
+      voiceId,
       stability: 0.4,
       similarityBoost: 0.8,
       speed: 1,
@@ -54,9 +54,6 @@ Tutor Guidelines:
         },
       ],
     },
-    // ✅ Either remove them, or explicitly set
-    clientMessages: "conversation-update",
-    serverMessages: "conversation-update",
   };
 
   return vapiAssistant;
