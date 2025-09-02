@@ -38,7 +38,7 @@ export const getallCompanions=async({limit=10,page=1,subject,topic}:GetAllCompan
 
 }
 
-export const getCompanionById=async(id:String)=>{
+export const getCompanionById=async(id:string)=>{
   const supabase = createSupabaseClient();
   const {data,error}=await supabase
   .from("companions")
@@ -51,7 +51,7 @@ export const getCompanionById=async(id:String)=>{
   return data;
 
 }
-export const addToSessionHistory = async (companionId: String) => {
+export const addToSessionHistory = async (companionId: string) => {
     const { userId } = await auth();
     const supabase = createSupabaseClient();
     const { data, error } = await supabase.from('session_history')
@@ -91,7 +91,7 @@ export const getUserSessions=async(userId:string,limit=10)=>{
   return data.map(({companions})=>companions)
 }
 
-export const getuserCompanions=async(userId:String)=>{
+export const getuserCompanions=async(userId:string)=>{
 const supabase=createSupabaseClient();
 const {data,error}=await supabase
 .from("companions")
