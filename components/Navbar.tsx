@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2.5 cursor-pointer">
         <img src="/images/logo.svg" alt="Logo" className="w-8 h-8" />
-        <span className="text-xl font-bold">SaaS App</span>
+        <span className="text-xl font-bold">AI Tutor</span>
       </Link>
 
       {/* Nav Items + Auth */}
