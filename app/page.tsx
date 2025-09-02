@@ -3,6 +3,8 @@ import CompanionList from '@/components/CompanionList'
 import CTA from '@/components/CTA'
 import { getallCompanions, getrecentSessions } from '@/lib/actions/companions.action'
 import React from 'react'
+export const dynamic = "force-dynamic";
+
 
 const subjectsColors = {
   science: "#E5D0FF",
