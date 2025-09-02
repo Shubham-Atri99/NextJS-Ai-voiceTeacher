@@ -1,4 +1,4 @@
-import Companioncard from '@/components/Companioncard'
+import Companioncard, { CompanionCardProps } from '@/components/Companioncard'
 import CompanionList from '@/components/CompanionList'
 import CTA from '@/components/CTA'
 import { getallCompanions, getrecentSessions } from '@/lib/actions/companions.action'
@@ -24,7 +24,7 @@ const Page = async () => {
     <main >
       <h1 className='text-2xl underline'>Popular companions</h1>
       <section className='home-section'>
-        {companions?.map((companion: any) => (
+        {companions?.map((companion: CompanionCardProps) => (
           <Companioncard
             key={companion.id}
             {...companion}
