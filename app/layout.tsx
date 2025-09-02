@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-provider"
 import {
   ClerkProvider,
   SignInButton,
@@ -31,8 +32,15 @@ export default function RootLayout({
      <ClerkProvider>
       <html lang="en">
       <body className={`${bricolage.variable} antialiased`}>
-        <Navbar />
-        {children}
+       
+          <Navbar />
+          {children}
+        
+          
+         
+       
+          
+        
         </body>
     </html>
      </ClerkProvider>

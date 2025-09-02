@@ -21,8 +21,8 @@ const CompanionSection = ({
   subject,
   topic,
   name,
-  userName,
-  userImage,
+  username,
+  userimage,
   style,
   voice,
 }: CompanionComponentProps) => {
@@ -165,14 +165,14 @@ const CompanionSection = ({
         <div className="user-section">
           <div className="user-avatar">
             <Image
-              src={userImage || "/default-avatar.png"}
-              alt={userName || "User"}
+              src={userimage || "/icons/default.svg"}
+              alt={username|| "User"}
               width={130}
               height={130}
               className="rounded-lg"
               unoptimized
             />
-            <p className="font-bold text-2xl">{userName}</p>
+            <p className="font-bold text-2xl">{username}</p>
           </div>
 
           <button
@@ -223,7 +223,7 @@ const CompanionSection = ({
         </p>
       ) : (
         <p key={index} className="text-primary max-sm:text-sm">
-          {userName}: {message.content}
+          {username}: {message.content}
         </p>
       )
     )}

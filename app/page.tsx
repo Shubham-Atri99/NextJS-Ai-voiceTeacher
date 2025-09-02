@@ -21,7 +21,7 @@ const Page = async () => {
   const recentSessions = recentSessionsRaw.flat();
 
   return (
-    <main>
+    <main >
       <h1 className='text-2xl underline'>Popular companions</h1>
       <section className='home-section'>
         {companions?.map((companion: any) => (

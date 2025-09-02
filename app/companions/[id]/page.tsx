@@ -11,6 +11,7 @@ interface CompanionSessionPageProps {
 }
 
 const Companion = async ({ params }: CompanionSessionPageProps) => {
+  
   const { id } = params   // ✅ no await needed
   const companion = await getCompanionById(id)
   const{ name, subject, title, duration, topic }=companion;
